@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/home/maria/run_simulations_cactus_clean/scripts/1_extract_intron_matrix/main.py", line 19, in <module>
+    introns.run()
+  File "/home/maria/run_simulations_cactus_clean/scripts/1_extract_intron_matrix/IntronMatrixNoCpG.py", line 26, in run
+    chunk['seq'] = chunk.apply(lambda row: row['seq'][row['start']-row['seq_start']: row['end']-row['seq_start']],axis=1)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/core/frame.py", line 10034, in apply
+    return op.apply().__finalize__(self, method="apply")
+           ^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/core/apply.py", line 837, in apply
+    return self.apply_standard()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/core/apply.py", line 965, in apply_standard
+    results, res_index = self.apply_series_generator()
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pandas/core/apply.py", line 981, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/maria/run_simulations_cactus_clean/scripts/1_extract_intron_matrix/IntronMatrixNoCpG.py", line 26, in <lambda>
+    chunk['seq'] = chunk.apply(lambda row: row['seq'][row['start']-row['seq_start']: row['end']-row['seq_start']],axis=1)
+                                           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'float' object is not subscriptable

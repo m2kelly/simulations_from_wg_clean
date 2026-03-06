@@ -1,0 +1,5 @@
+creates bedfile for episode from full maf file (gzipped)
+removes inseions relative to the human genome
+DOES NOT restrict to only bases valid in both species
+analyses sequences to find cpg islands using ucsc tool https://genome.ucsc.edu/cgi-bin/hgTrackUi?g=cpgIslandExt
+produces combined_cpgs.bed file with the union of cpg islands from target and anc species
